@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트교육 자산관리 솔루션</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contents.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/notice.css">
+    
+    <script src="js/header.js"></script>
+</head>
+<body>
+
+<!-- 데스크톱 헤더 -->
+<header class="main-header desktop-header">
+    <div class="main-header-logo">
+        <a href="index.html">
+            <img src="images/se_logo.png" alt="서울특별시교육청 로고">
+        </a>
+    </div>
+    <nav class="main-header-nav">
+        <ul>
+            <li class="has-submenu">
+                <a href="#" onclick="showComingSoon('쉬운해결'); return false;">쉬운해결</a>
+            </li>
+            <li class="has-submenu">
+                <a href="#" onclick="showComingSoon('AS예약'); return false;">AS예약</a>
+            </li>
+            <li class="has-submenu">
+                <a href="notice/notice.html">알림사항</a>
+            </li>
+            <li class="has-submenu">
+                <a href="pages/serviceCenter.html">서비스센터 위치</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="main-header-login">
+        <button class="main-header-login-btn" onclick="location.href='login.html'">로그인</button>
+    </div>
+    <button class="main-header-menu-btn" aria-label="메뉴 열기"></button>
+</header>
+
+<!-- 모바일 헤더 -->
+<header class="mobile-header">
+    <div class="mobile-header-top">
+        <div class="mobile-header-logo">
+            <a href="index.html">
+                <img src="images/se_logo.png" alt="서울특별시교육청 로고">
+            </a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <nav class="mobile-nav">
+        <ul class="mobile-nav-list">
+            <li class="mobile-has-submenu">
+                <a href="#" onclick="showComingSoon('쉬운해결'); return false;">쉬운해결 <i class="bi bi-chevron-right"></i></a>
+            </li>
+            <li class="mobile-has-submenu">
+                <a href="#" onclick="showComingSoon('AS예약'); return false;">AS예약 <i class="bi bi-chevron-right"></i></a>
+            </li>
+            <li class="mobile-has-submenu">
+                <a href="notice/notice.html">알림사항 <i class="bi bi-chevron-right"></i></a>
+            </li>
+            <li class="mobile-has-submenu">
+                <a href="pages/serviceCenter.html">서비스센터 위치 <i class="bi bi-chevron-right"></i></a>
+            </li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <button class="mobile-login-btn" onclick="location.href='login.html'">로그인</button>
+        </div>
+    </nav>
+</header>
+
+<!-- 메인 컨텐츠 시작 -->
+<div class="main-container">
+    <div class="main-visual-container">
+        <div class="main-visual">
+            <video autoplay muted loop playsinline class="background-video">
+                <source src="images/main_visual_bg.mp4" type="video/mp4">
+            </video>
+            <div class="video-gradient-overlay"></div>
+            <div class="main-visual-text">
+                <h1>스마트교육<br><span class="font-600">자산관리 솔루션</span></h1>
+                <form class="main-search-form">
+                    <input type="text" placeholder="원하시는 정보를 입력해주세요.">
+                    <button type="submit" class="main-search-btn"></button>
+                </form>
+            </div>
+        </div>
+        <div class="main-info-box">
+            <!-- 로그인하지 않은 상태 표시 -->
+            <div class="main-info-title">보유기기 제품 정보</div>
+            <div class="main-info-content login-required">
+                <div class="login-message">
+                    <p>로그인을 하시면 보유기기 제품 정보 확인이 가능합니다.</p>
+                    <a href="login.html" class="login-btn">로그인하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-notice-section">
+        <div class="main-notice-title">알림사항 <button class="main-notice-more" onclick="location.href='notice/notice.html'">전체보기</button></div>
+        <ul class="main-notice-list">
+            <li onclick="location.href='notice/noticeView.html?id=1'" style="cursor: pointer;">
+                <span>스마트교육 자산관리 솔루션 알림사항입니다.</span>
+                <span class="main-notice-date">2025-05-09</span>
+            </li>
+            <li onclick="location.href='notice/noticeView.html?id=2'" style="cursor: pointer;">
+                <span>스마트교육 자산관리 솔루션 매뉴얼을 알려드립니다.</span>
+                <span class="main-notice-date">2025-05-09</span>
+            </li>
+        </ul>
+    </div>
+    <div class="main-service-section">
+        <div class="main-notice-title">서비스 이용</div>
+        <div class="main-service-item-container">
+            <div class="main-service-item main-service-location" onclick="location.href='pages/serviceCenter.html'" style="cursor: pointer;">
+                <div class="main-service-title">서비스센터 위치</div>
+                <div class="main-service-desc">서비스센터의 위치정보를 알려드립니다.</div>
+                <img src="images/location_ico.svg" alt="서비스센터 위치">
+            </div>
+            <div class="main-service-item main-service-solve" onclick="showComingSoon('쉬운 해결')" style="cursor: pointer;">
+                <div class="main-service-title">쉬운 해결</div>
+                <div class="main-service-desc">검색을 통해 빠르게 문제를 해결해보세요.</div>
+                <img src="images/question_ico.svg" alt="쉬운 해결">
+            </div>
+            <div class="main-service-item main-service-as" onclick="showComingSoon('AS 접수 예약')" style="cursor: pointer;">
+                <div class="main-service-title">AS 접수 예약</div>
+                <div class="main-service-desc">제품 AS 접수 예약을 쉽고 간편하게!</div>
+                <img src="images/repair_ico.svg" alt="as 접수 예약">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 메인 컨텐츠 끝 -->
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="images/logo_tgs.png" alt="TGService">
+            </div>
+            <div class="footer-links">
+                <a href="#">이용약관</a>
+                <span>|</span>
+                <a href="#">개인정보처리방침</a>
+                <span>|</span>
+                <a href="#">스마트단말 고객지원센터</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            Copyright©2025 TGS corp. All Rights Reserved.
+        </div>
+        <div class="footer-bottom-logo">
+            <img src="images/logo_tgs.png" alt="TGService">
+        </div>
+    </div>
+</footer>
+
+<script>
+function showComingSoon(menuName) {
+    alert(`${menuName} 메뉴는 준비중인 화면입니다.\n곧 업데이트 예정입니다.`);
+}
+</script>
+
+</body>
+</html> 

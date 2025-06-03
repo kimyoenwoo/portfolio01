@@ -1,0 +1,418 @@
+/* 게시판 공통 스타일 */
+.board-container {
+    background: #fff;
+    border-radius: 12px;
+    margin: 30px 0;
+    padding: 0 20px;
+}
+
+/* 검색 영역 */
+.search-area {
+    margin: 30px 0;
+}
+
+.search-box {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+
+/* 게시판 목록 테이블 */
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.board-table th {
+    padding: 15px;
+    font-weight: 600;
+    color: #495057;
+    border-bottom:2px solid #019ac4;
+    text-align: center;
+}
+
+.board-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+    text-align: center;
+    color: #495057;
+}
+
+.board-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.board-table .num {
+    width: 80px;
+}
+
+.board-table .title {
+    text-align: left;
+}
+
+.board-table .title a {
+    color: #212529;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.board-table .title a:hover {
+    color: #007bff;
+}
+
+.board-table .writer {
+    width: 120px;
+}
+
+.board-table .date {
+    width: 120px;
+}
+
+.board-table .views {
+    width: 100px;
+}
+
+/* 페이지네이션 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 5px;
+}
+
+.page-btn,
+.page-numbers button {
+    padding: 8px 16px;
+    border: 1px solid #dee2e6;
+    background: #fff;
+    color: #495057;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled),
+.page-numbers button:hover:not(.active) {
+    background: #e9ecef;
+    border-color: #ced4da;
+}
+
+.page-btn:disabled {
+    background: #f8f9fa;
+    color: #adb5bd;
+    cursor: not-allowed;
+}
+
+
+
+/* 게시글 상세보기 */
+.board-view {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.board-header {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+    margin-bottom: 30px;
+}
+
+.board-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 15px;
+}
+
+.board-info {
+    display: flex;
+    gap: 20px;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.board-content {
+    min-height: 300px;
+    line-height: 1.8;
+    color: #495057;
+    margin-bottom: 30px;
+    white-space: pre-wrap;
+}
+
+.board-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+    gap: 10px;
+}
+
+.board-buttons button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.list-btn {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.list-btn:hover {
+    background: #dee2e6;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn {
+    background: #0064af;
+    color: #fff;
+}
+
+.edit-btn:hover {
+    background: rgb(0, 66, 136);
+}
+
+.delete-btn {
+    background: #373737;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background: #505050;
+}
+
+.write-btn{
+    background: #373737;
+    color: #fff; 
+}
+
+.write-btn:hover{
+    background: #505050;
+    color: #fff; 
+}
+/* 게시글 작성/수정 폼 */
+.board-write {
+    max-width:100%;
+    margin: 0 auto;
+}
+.board-write>form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-group textarea {
+    width: 100%;
+    min-height: 300px;
+    padding: 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: vertical;
+    transition: all 0.2s;
+}
+
+.form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.password-hint {
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: #FF5722;
+    font-weight: 600;
+}
+
+.submit-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.submit-btn {
+    background: #019ac4;
+    color: #fff;
+}
+
+.submit-btn:hover {
+    background: #0080a3;
+}
+
+.cancel-btn {
+    background: #6c757d;
+    color: #fff;
+}
+
+.cancel-btn:hover {
+    background: #5a6268;
+}
+
+/* 검색 결과 없음 메시지 */
+.no-results-message {
+    text-align: center;
+    padding: 50px 0;
+    color: #6c757d;
+}
+
+.no-results-icon {
+    font-size: 3rem;
+    color: #dee2e6;
+    margin-bottom: 15px;
+}
+
+.no-results-sub {
+    font-size: 0.9rem;
+    color: #adb5bd;
+    margin-top: 5px;
+}
+.board-view-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+
+.board-view-info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.board-view-content{
+    border-top: 2px solid #000000;
+    border-bottom: 1px solid #000000;
+    box-sizing: border-box;
+    padding: 10px 20px;  
+}
+/* 모바일 대응 */
+@media (max-width: 767px) {
+    .board-container {
+        padding: 0 10px;
+        margin: 20px 0;
+    }
+
+    .board-table th,
+    .board-table td {
+        padding: 12px 2px;
+        font-size: 0.8rem;
+    }
+
+    .board-table .num {
+        width: 40px;
+    }
+
+    .board-table .writer,
+    .board-table .date {
+        width: 80px;
+    }
+
+    .board-table .views {
+        width: 80px;
+    }
+
+    .board-title {
+        font-size: 1.4rem;
+    }
+
+    .board-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .board-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .board-buttons button {
+        width: 100%;
+    }
+
+    .edit-buttons {
+        width: 100%;
+    }
+
+    .edit-buttons button {
+        flex: 1;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="password"],
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+
+    .submit-buttons {
+        flex-direction: column;
+    }
+
+    .submit-buttons button {
+        width: 100%;
+    }
+
+    .board-view-content{
+        font-size: 0.8rem;
+    }
+
+    .board-view-header{
+        font-size: 0.7rem;
+    }
+    
+    
+} 

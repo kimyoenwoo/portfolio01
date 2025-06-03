@@ -1,0 +1,20 @@
+{
+  "name": "smart-education-asset-management",
+  "version": "1.0.0",
+  "description": "스마트교육 자산관리 솔루션 정적 사이트",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server . -p 8080 -o",
+    "dev": "http-server . -p 3000 -o"
+  },
+  "keywords": [
+    "education",
+    "asset-management",
+    "static-site"
+  ],
+  "author": "TGS Corp",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+} 

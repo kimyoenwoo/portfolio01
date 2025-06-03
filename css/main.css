@@ -1,0 +1,527 @@
+/* main.css - 메인화면 전용 스타일 */
+.main-container {
+    max-width: 85%;
+    margin: 0 auto;
+}
+.main-visual-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 20px; 
+    height: 420px;
+}
+.main-visual {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    height: 100%;
+    width: 65%;
+    background-image: url(../images/main_visial_bg.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0077d636;
+    background-blend-mode: screen;
+    box-sizing: border-box;
+    /* padding: 120px 40px 50px 40px; */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 18px; /* 기존 스타일과 일치시킴 */
+    filter: brightness(0.92); /* 기존 이미지 필터와 일치 */
+}
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 필요에 따라 조정 */
+    overflow: hidden;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    -webkit-object-fit: cover;
+    -webkit-object-position: center center;
+}
+/* 비디오 컨트롤 숨기기 */
+.background-video::-webkit-media-controls,
+.background-video::-webkit-media-controls-play-button,
+.background-video::-webkit-media-controls-start-playback-button,
+.background-video::-webkit-media-controls-panel {
+    display: none !important;
+    opacity: 0 !important;
+}
+
+.video-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 36%), rgba(0, 0, 0, 0)); /* 상단에 살짝 어두운 그라디언트 */
+    z-index: 1;
+    pointer-events: none; /* 클릭 등 이벤트를 비디오에 전달 */
+}
+/* 기존 텍스트 z-index 값 증가 */
+.main-visual-text {
+    z-index: 2;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-left: 30px
+}
+.main-visual-text h1 {
+    font-size: 3.2em;
+    font-weight: 400;
+    margin-bottom: 18px;
+    line-height: 1.1;
+}
+
+.main-visual-text span.font-600{
+    font-weight: 600;
+}
+.main-search-form {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.95);
+    border-radius: 40px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 21%);
+    width: 70%;
+}
+.main-search-form input {
+    border: none !important;
+    outline: none;
+    background: transparent !important;
+    font-size: 1.1rem;
+    padding: 8px 0 8px 8px;
+    width:100%;
+}
+.main-search-btn {
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent;
+}
+.main-search-btn::before{
+    content: '\F52A';
+    font-family: 'bootstrap-icons' !important;
+    font-size: 2em;
+    color:#019ac4;
+}
+.main-info-box {
+    background: linear-gradient(147deg, #4c9bc2, #369db6, #0ea3a3);
+    color: #fff;
+    border-radius: 16px;
+    box-sizing: border-box;
+    padding: 30px;
+    box-shadow: 0 2px 12px rgba(30,144,228,0.07);
+    width:35%;
+}
+.main-info-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+    position: relative;
+}
+.main-info-title button{
+    background: transparent;
+    position: absolute;
+    right: 0px;
+
+}
+.main-info-title button:after{
+    content: '\F3E5';
+    font-family: 'bootstrap-icons' !important;
+    font-size: 1.6rem;
+    color: #fff;
+}
+.main-info-content{
+    box-sizing: border-box;
+    padding: 10px;
+}
+.main-info-content > div {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.main-info-content span {
+    font-weight: 400;
+    margin-left: 8px;
+    font-size: 1.1rem;
+}
+.main-info-status {
+    padding: 25px 20px;
+    background: #ffffff36;
+    border-radius: 8px;
+    margin-bottom: 0;
+    margin: 0 !important;
+    position: relative;
+}
+
+.main-info-status:after{
+    content: '\F285';
+    font-family: 'bootstrap-icons' !important;
+    font-size: 1.5rem;
+    color: #fff;
+    position: absolute;
+    right:10px;
+}
+.main-info-status-btn {
+    background: #fff;
+    color: #1e90e4;
+    border: none;
+    border-radius: 16px;
+    padding: 4px 18px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.main-notice-section {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.main-notice-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    position: relative;
+}
+.main-notice-more{
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    background: transparent;
+    font-size: 1rem;
+    color: #888;
+}
+
+.main-notice-list {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.main-notice-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 22px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1.2rem;
+}
+.main-notice-list li span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+.main-notice-list li span:nth-child(1){
+    width: 70%;
+}
+
+.main-notice-list li span:nth-child(2){
+    width: 30%;
+    text-align: right;
+}
+.main-notice-list li:last-child {
+    border-bottom: none;
+}
+.main-notice-date {
+    color: #adadad;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.main-service-section {
+    display: flex;
+    flex-direction: column;
+}
+.main-service-item-container{
+    gap: 24px;
+    display: flex;
+}
+.main-service-item {
+    flex: 1;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(30,144,228,0.07);
+    padding: 40px;
+    text-align: left;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+.main-service-item:hover {
+    box-shadow: 0 4px 18px rgba(30,144,228,0.13);
+}
+
+.main-service-item{
+    position: relative;
+}
+
+.main-service-item img{
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+    width:80px;
+    opacity: 0.1;
+}
+.main-service-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.main-service-desc {
+    color: #ffffffc9;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.main-service-location {
+    background:#006496;
+    color: #fff;
+}
+
+.main-service-solve {
+    background:#019ac4;
+    color: #fff;
+}
+.main-service-as {
+    background:#00b1b6;
+    color: #fff;
+}
+@media screen and (max-width: 1700px) {
+}
+@media screen and (max-width: 1420px) {
+    .main-container{
+    max-width:90%;
+    
+    }
+}
+@media screen and (max-width: 1199px) {
+    .main-container {
+        padding: 40px 15px;
+        max-width:90%;
+        padding-top: 80px;
+    }
+    
+    .main-visual-container {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+    
+    .main-visual {
+        width: 100%;
+        height: 350px;
+    }
+    
+    .main-info-box {
+        width: 100%;
+    }
+    
+    
+    .main-service-item {
+        padding: 30px;
+    }
+    
+    .main-service-item img {
+        width: 70px;
+        right: 30px;
+    }
+
+    .main-service-item-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .main-service-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 30px;
+        height: 120px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .main-service-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .main-service-desc {
+        font-size: 1.1rem;
+    }
+    
+    .main-service-item img {
+        position: absolute;
+        right: 30px;
+        bottom: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100px;
+        height: 100px;
+        opacity: 0.15;
+    }
+    
+    /* 서비스 아이템 색상 재정의 */
+    .main-service-as {
+        background: #00b1b6;
+    }
+    
+    .main-service-solve {
+        background: #5590b9;
+    }
+    
+    .main-service-location {
+        background: #004d71;
+    }
+}
+@media (max-width: 959px) {
+    .main-visual{
+        height: 250px;
+    }
+
+    .main-visual-text{
+        bottom:0;
+    }
+
+    .main-visual-text{
+        gap:20px;
+    }
+
+    .main-visual-text h1{
+        font-size: 2.5rem;
+    }
+
+    
+}
+@media (max-width: 767px) {
+
+    .main-container{
+        padding:20px 15px;
+        padding-top:80px;
+    }
+    .main-visual{
+        height: 180px;
+    }
+
+    .main-visual-text{
+        gap:0;
+        padding-left: 20px;
+        bottom:20px
+    }
+    .main-visual-container{
+        gap:15px;
+    }
+    .main-visual-text h1{
+        font-size: 1.5rem;
+    }
+    .main-search-form{
+        padding:5px 20px;
+    }
+
+    .main-search-form{
+        width: 85%;
+    }
+    .main-search-form input[type="text"]{
+        font-size: 0.8rem !important;
+        padding:0;
+    }
+    .main-search-btn::before{
+        font-size: 1.2rem;
+    }
+    .main-search-form{
+        font-size: 1.4rem;
+    }
+    .main-info-box{
+        padding:15px;
+    }
+    .main-info-content > div{
+        font-size: 1rem;
+    }
+    .main-info-content span{
+        font-size: 0.9rem;
+    }
+
+    .login-message p{
+        font-size:0.9rem;
+    }
+
+
+    .main-info-title{
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .main-info-title button:after{
+        font-size: 1.2rem;
+    }
+
+    .main-info-status:after{
+        font-size: 1rem;
+    }
+    .main-notice-list{
+        padding:15px;
+    }
+
+    .main-notice-list li{
+        padding:10px 10px;
+    }
+    .main-notice-list li span:nth-child(1){
+        font-size: 0.8rem;
+        width: 65%;
+    }
+
+    .main-notice-list li span:nth-child(2){
+        font-size: 0.7rem;
+        padding-left: 10px;
+    }
+    .main-notice-title{
+        font-size: 1.1rem;
+    }
+
+    .main-notice-more{
+        font-size: 0.8rem;
+    }
+    .main-service-item{
+        padding:30px 25px;
+    }
+
+    .main-service-title{
+        font-size: 1rem;
+    }
+    .main-service-desc{
+        font-size: 0.8rem;
+    }
+
+    .main-service-item img{
+        width: 60px;
+    }
+} 

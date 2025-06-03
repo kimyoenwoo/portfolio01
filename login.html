@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 - 스마트교육 자산관리 솔루션</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+<div class="auth-bg">
+    <div class="auth-card">
+        <div class="auth-left">
+            <div class="auth-logo-area">
+                <div class="auth-logo"><i class="bi bi-mortarboard-fill"></i></div>
+                <div class="auth-title">
+                    <div>학교 스마트교육</div>
+                    <div class="auth-title-main">자산관리 솔루션</div>
+                </div>
+            </div>
+            <div class="auth-tab-btns">
+                <button id="loginTabBtn" class="auth-tab-btn active">로그인</button>
+                <button id="registerTabBtn" class="auth-tab-btn">회원가입</button>
+            </div>
+        </div>
+        <div class="auth-right">
+            <div class="auth-right-header">
+                <img src="images/logo_tgs.png" alt="TGService">
+            </div>
+            <div id="loginTab" class="auth-tab-content active">
+                <div class="auth-form-title">로그인</div>
+                <div class="auth-form-desc">로그인 후 다양한 서비스이용이 가능합니다.</div>
+                <form id="loginForm" method="post" action="#" onsubmit="return false;">
+                    <div class="auth-input-group">
+                        <input type="text" id="username" name="username" placeholder="아이디를 입력하세요." required>
+                    </div>
+                    <div class="auth-input-group">
+                        <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요." required>
+                    </div>
+                    <div class="auth-options">
+                        <label class="auth-checkbox">
+                            <input type="checkbox" name="remember-me">
+                            <span>아이디를 저장하시겠습니까?</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="auth-btn main" onclick="simulateLogin()">로그인</button>
+                    <div class="auth-links">
+                        <a href="#" id="findIdBtn">아이디찾기</a>
+                        <span>|</span>
+                        <a href="#" id="findPwBtn">비밀번호 찾기</a>
+                    </div>
+                </form>
+            </div>
+            <div id="registerTab" class="auth-tab-content">
+                <div class="auth-form-title">회원가입</div>
+                <div class="auth-form-desc">간단한 회원가입 후 서비스를 이용해보세요.</div>
+                <form id="registerForm" method="post" action="#" novalidate onsubmit="return false;">
+                    <div class="register-row">
+                        <div class="auth-input-group">
+                            <label>아이디(이메일)</label>
+                            <div class="input-btn-wrap">
+                                <input type="email" name="email" placeholder="아이디를 입력하세요." required>
+                                <button type="button" class="auth-btn sub">중복확인</button>
+                            </div>
+                            <div class="form-error" style="display:none;"></div>
+                        </div>
+                        <div class="auth-input-group">
+                            <label>이름</label>
+                            <input type="text" name="name" placeholder="이름을 입력하세요." required>
+                            <div class="form-error" style="display:none;"></div>
+                        </div>
+                    </div>
+                    <div class="register-row">
+                        <div class="auth-input-group">
+                            <label>비밀번호</label>
+                            <input type="password" name="password" placeholder="비밀번호를 입력하세요." required>
+                            <div class="form-error" style="display:none;"></div>
+                        </div>
+                        <div class="auth-input-group">
+                            <label>비밀번호 확인</label>
+                            <input type="password" name="password2" placeholder="비밀번호를 다시 입력하세요." required>
+                            <div class="form-error" style="display:none;"></div>
+                        </div>
+                    </div>
+                    <div class="register-row">
+                        <div class="auth-input-group">
+                            <label>휴대폰 번호</label>
+                            <div class="input-btn-wrap">
+                                <input type="text" name="phone" placeholder="휴대폰 번호를 입력하세요." required>
+                                <button type="button" class="auth-btn sub">인증번호 전송</button>
+                            </div>
+                            <div class="form-error" style="display:none;"></div>
+                        </div>
+                        <div class="auth-input-group">
+                            <label>인증번호</label>
+                            <div class="input-btn-wrap">
+                                <input type="text" name="cert" placeholder="인증번호를 입력하세요." required>
+                                <button type="button" class="auth-btn sub">인증번호 확인</button>
+                            </div>
+                            <div class="form-error" style="display:none;"></div>
+                        </div>
+                    </div>
+                    <div class="auth-agree-box">
+                        <label class="auth-checkbox all">
+                            <input type="checkbox" name="agree_all" id="agree_all">
+                            <span>전체 동의</span>
+                        </label>
+                        <div class="agree-row">
+                            <label class="auth-checkbox">
+                                <input type="checkbox" name="agree1" class="agree-item" required>
+                                <span>이용약관 (필수)</span>
+                                <span class="flex-spacer"></span>
+                                <a href="#" class="auth-link" data-term="terms1">약관보기</a>
+                            </label>
+                            <label class="auth-checkbox">
+                                <input type="checkbox" name="agree2" class="agree-item" required>
+                                <span>개인정보 수집 이용 (필수)</span>
+                                <span class="flex-spacer"></span>
+                                <a href="#" class="auth-link" data-term="terms2">약관보기</a>
+                            </label>
+                            <label class="auth-checkbox">
+                                <input type="checkbox" name="agree3" class="agree-item">
+                                <span>뉴스레터 메일 수신 (선택)</span>
+                                <span class="flex-spacer"></span>
+                                <a href="#" class="auth-link" data-term="terms3">약관보기</a>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="auth-btn main">회원가입</button>
+                </form>
+            </div>
+            <div class="back-to-main">
+                <button type="button" class="back-to-main-btn" onclick="location.href='index.html'">
+                    <i class="bi bi-house"></i> 메인화면으로 돌아가기
+                </button>
+            </div>
+            <div class="auth-right-footer">
+                <p class="auth-right-footer-text">
+                    Copyrightⓒ2025 TGS corp. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 아이디/비밀번호 찾기 팝업 -->
+<div id="findPopupBg" class="find-popup-bg" style="display:none;">
+    <div class="find-popup" id="findIdPopup" style="display:none;">
+        <div class="find-popup-title">아이디 찾기</div>
+        <form id="findIdForm">
+            <input type="text" name="findName" placeholder="이름을 입력하세요" required>
+            <input type="text" name="findPhone" placeholder="휴대폰 번호를 입력하세요" required>
+            <button type="submit" class="auth-btn main">아이디 찾기</button>
+        </form>
+        <button class="find-popup-close" type="button"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="find-popup" id="findPwPopup" style="display:none;">
+        <div class="find-popup-title">비밀번호 찾기</div>
+        <form id="findPwForm">
+            <input type="email" name="findEmail" placeholder="이메일을 입력하세요" required>
+            <input type="text" name="findPhone" placeholder="휴대폰 번호를 입력하세요" required>
+            <button type="submit" class="auth-btn main">비밀번호 찾기</button>
+        </form>
+        <button class="find-popup-close" type="button"><i class="bi bi-x-lg"></i></button>
+    </div>
+</div>
+<!-- 약관 팝업 -->
+<div id="termsPopupBg" class="find-popup-bg" style="display:none;">
+    <div class="find-popup" id="termsPopup" style="display:none; max-width: 480px;">
+        <div class="terms-popup-title-wrap">
+            <div class="find-popup-title" id="termsPopupTitle">약관</div>
+        </div>
+        <div class="terms-popup-divider"></div>
+        <div class="terms-popup-content" id="termsPopupContent"></div>
+        <button class="find-popup-close" type="button"><i class="bi bi-x-lg"></i></button>
+    </div>
+</div>
+
+<script src="js/login.js"></script>
+<script>
+// 로그인 시뮬레이션을 위한 간단한 함수
+function simulateLogin() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    if (username && password) {
+        alert('로그인되었습니다! (시뮬레이션)');
+        // 실제로는 메인 페이지로 리다이렉트
+        window.location.href = 'index.html';
+    } else {
+        alert('아이디와 비밀번호를 입력해주세요.');
+    }
+}
+
+function showComingSoon(menuName) {
+    alert(`${menuName} 메뉴는 준비중인 화면입니다.\n곧 업데이트 예정입니다.`);
+}
+</script>
+</body>
+</html> 
