@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서비스센터 위치 - 스마트교육 자산관리 솔루션</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/contents.css">
+    <link rel="stylesheet" href="../css/board.css">
+    <link rel="stylesheet" href="../css/notice.css">
+    <script src="../js/header.js"></script>
+</head>
+<body>
+
+<!-- 데스크톱 헤더 -->
+<header class="main-header desktop-header">
+    <div class="main-header-logo">
+        <a href="../index.html">
+            <img src="../images/se_logo.png" alt="서울특별시교육청 로고">
+        </a>
+    </div>
+    <nav class="main-header-nav">
+        <ul>
+            <li class="has-submenu">
+                <a href="#" onclick="showComingSoon('쉬운해결'); return false;">쉬운해결</a>
+            </li>
+            <li class="has-submenu">
+                <a href="#" onclick="showComingSoon('AS예약'); return false;">AS예약</a>
+            </li>
+            <li class="has-submenu">
+                <a href="../notice/notice.html">알림사항</a>
+            </li>
+            <li class="has-submenu">
+                <a href="serviceCenter.html">서비스센터 위치</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="main-header-login">
+        <button class="main-header-login-btn" onclick="location.href='../login.html'">로그인</button>
+    </div>
+    <button class="main-header-menu-btn" aria-label="메뉴 열기"></button>
+</header>
+
+<!-- 모바일 헤더 -->
+<header class="mobile-header">
+    <div class="mobile-header-top">
+        <div class="mobile-header-logo">
+            <a href="../index.html">
+                <img src="../images/se_logo.png" alt="서울특별시교육청 로고">
+            </a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <nav class="mobile-nav">
+        <ul class="mobile-nav-list">
+            <li class="mobile-has-submenu">
+                <a href="#" onclick="showComingSoon('쉬운해결'); return false;">쉬운해결 <i class="bi bi-chevron-right"></i></a>
+            </li>
+            <li class="mobile-has-submenu">
+                <a href="#" onclick="showComingSoon('AS예약'); return false;">AS예약 <i class="bi bi-chevron-right"></i></a>
+            </li>
+            <li class="mobile-has-submenu">
+                <a href="../notice/notice.html">알림사항 <i class="bi bi-chevron-right"></i></a>
+            </li>
+            <li class="mobile-has-submenu">
+                <a href="serviceCenter.html">서비스센터 위치 <i class="bi bi-chevron-right"></i></a>
+            </li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <button class="mobile-login-btn" onclick="location.href='../login.html'">로그인</button>
+        </div>
+    </nav>
+</header>
+
+<main class="container">
+    <div class="mainVisual">
+        <h1>서비스센터 위치</h1>
+        <p>가까운 서비스센터를 찾아 방문하시거나 문의하세요</p>
+    </div>
+    <div class="contents">
+        <div class="path-navigation">
+            <ul>
+                <li><a href="../index.html">홈</a></li>
+                <li class="current">서비스센터 위치안내</li>
+            </ul>
+        </div>
+        <div class="content-title">
+            <h2>서비스센터 위치 안내</h2>
+            <p>서비스센터의 위치 및 운영정보를 안내해드립니다.<br>찾으시는 서비스센터를 검색해주세요.</p>
+        </div>
+
+        <div class="search-area">
+            <div class="search-box">
+                <input type="text" id="centerSearch" placeholder="지역명을 입력하세요" class="search-input">
+                <button type="button" class="search-btn" onclick="searchCenters()"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+
+        <div class="operation-time">
+            <h3>표준 운영시간</h3>
+            <div class="operation-info">
+                <p>서비스 접수 센터 운영시간은 지점별로 상이하며,<br>
+                09:00~18:00 혹은 10:00~19:00 등 운영 시간이 각 지점별로 다르게 운영이 되고 있습니다.<br>
+                센터 방문 전, <strong>운영시간</strong>과 <strong>지참서류</strong> 확인 후 방문해주세요</p>
+                
+                <div class="operation-notice">
+                    <ul>
+                        <li>평일은 제품 점검시간을 고려하여 18시까지 방문을 부탁드립니다.</li>
+                        <li>토요일은 방문고객 혼잡도에 따라서 당일 수리 및 액정 보호필름 부착 여부가 다를 수 있는 점 양해 부탁드립니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-find">
+            <h3>센터찾기</h3>
+            <div class="center-list-container">
+                <div class="center-list">
+                    <table class="center-table">
+                        <thead>
+                            <tr>
+                                <th class="num">번호</th>
+                                <th class="info">센터 정보</th>
+                                <th class="action">위치보기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-center="화정역점">
+                                <td class="num"><span>1</span></td>
+                                <td class="info">
+                                    <div class="center-info-wrapper">
+                                        <div class="center-name">화정역점</div>
+                                        <div class="center-address">경기 고양시 덕양구 화정로 65-1 (화정동)</div>
+                                        <div class="center-time desktop-time">
+                                            <p>▷평일 : 10:00~20:00</p>
+                                            <p>▷토요일 : 10:00~20:00</p>
+                                            <p>※ 매주 일요일 & 공휴일 휴무</p>
+                                        </div>
+                                        <div class="center-time mobile-time">
+                                            <p>▷평일 : 10:00~20:00</p>
+                                            <p>▷토요일 : 10:00~20:00</p>
+                                            <p>※ 매주 일요일 & 공휴일 휴무</p>
+                                        </div>
+                                        <button type="button" class="location-btn mobile-location-btn" onclick="showMap('화정역점')">위치보기</button>
+                                    </div>
+                                </td>
+                                <td class="action">
+                                    <button type="button" class="location-btn" onclick="showMap('화정역점')">위치보기</button>
+                                </td>
+                            </tr>
+                            <tr data-center="일산점">
+                                <td class="num"><span>2</span></td>
+                                <td class="info">
+                                    <div class="center-info-wrapper">
+                                        <div class="center-name">일산점</div>
+                                        <div class="center-address">경기 고양시 일산동구 중앙로 1205 (백석동)</div>
+                                        <div class="center-time desktop-time">
+                                            <p>▷평일 : 09:00~18:00</p>
+                                            <p>▷토요일 : 09:00~18:00</p>
+                                            <p>※ 매주 일요일 & 공휴일 휴무</p>
+                                        </div>
+                                        <div class="center-time mobile-time">
+                                            <p>▷평일 : 09:00~18:00</p>
+                                            <p>▷토요일 : 09:00~18:00</p>
+                                            <p>※ 매주 일요일 & 공휴일 휴무</p>
+                                        </div>
+                                        <button type="button" class="location-btn mobile-location-btn" onclick="showMap('일산점')">위치보기</button>
+                                    </div>
+                                </td>
+                                <td class="action">
+                                    <button type="button" class="location-btn" onclick="showMap('일산점')">위치보기</button>
+                                </td>
+                            </tr>
+                            <tr data-center="강남점">
+                                <td class="num"><span>3</span></td>
+                                <td class="info">
+                                    <div class="center-info-wrapper">
+                                        <div class="center-name">강남점</div>
+                                        <div class="center-address">서울 강남구 테헤란로 123 (역삼동)</div>
+                                        <div class="center-time desktop-time">
+                                            <p>▷평일 : 10:00~19:00</p>
+                                            <p>▷토요일 : 10:00~19:00</p>
+                                            <p>※ 매주 일요일 & 공휴일 휴무</p>
+                                        </div>
+                                        <div class="center-time mobile-time">
+                                            <p>▷평일 : 10:00~19:00</p>
+                                            <p>▷토요일 : 10:00~19:00</p>
+                                            <p>※ 매주 일요일 & 공휴일 휴무</p>
+                                        </div>
+                                        <button type="button" class="location-btn mobile-location-btn" onclick="showMap('강남점')">위치보기</button>
+                                    </div>
+                                </td>
+                                <td class="action">
+                                    <button type="button" class="location-btn" onclick="showMap('강남점')">위치보기</button>
+                                </td>
+                            </tr>
+                            <tr data-center="송파점">
+                                <td class="num"><span>4</span></td>
+                                <td class="info">
+                                    <div class="center-info-wrapper">
+                                        <div class="center-name">송파점</div>
+                                        <div class="center-address">서울 송파구 올림픽로 240 (잠실동)</div>
+                                        <div class="center-time desktop-time">
+                                            <p>▷평일 : 09:00~18:00</p>
+                                            <p>▷토요일 : 09:00~18:00</p>
+                                            <p>※ 매주 일요일 & 공휴일 휴무</p>
+                                        </div>
+                                        <div class="center-time mobile-time">
+                                            <p>▷평일 : 09:00~18:00</p>
+                                            <p>▷토요일 : 09:00~18:00</p>
+                                            <p>※ 매주 일요일 & 공휴일 휴무</p>
+                                        </div>
+                                        <button type="button" class="location-btn mobile-location-btn" onclick="showMap('송파점')">위치보기</button>
+                                    </div>
+                                </td>
+                                <td class="action">
+                                    <button type="button" class="location-btn" onclick="showMap('송파점')">위치보기</button>
+                                </td>
+                            </tr>
+                            <tr data-center="부천점">
+                                <td class="num"><span>5</span></td>
+                                <td class="info">
+                                    <div class="center-info-wrapper">
+                                        <div class="center-name">부천점</div>
+                                        <div class="center-address">경기 부천시 길주로 210 (중동)</div>
+                                        <div class="center-time desktop-time">
+                                            <p>▷평일 : 10:00~19:00</p>
+                                            <p>▷토요일 : 10:00~19:00</p>
+                                            <p>※ 매주 일요일 & 공휴일 휴무</p>
+                                        </div>
+                                        <div class="center-time mobile-time">
+                                            <p>▷평일 : 10:00~19:00</p>
+                                            <p>▷토요일 : 10:00~19:00</p>
+                                            <p>※ 매주 일요일 & 공휴일 휴무</p>
+                                        </div>
+                                        <button type="button" class="location-btn mobile-location-btn" onclick="showMap('부천점')">위치보기</button>
+                                    </div>
+                                </td>
+                                <td class="action">
+                                    <button type="button" class="location-btn" onclick="showMap('부천점')">위치보기</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <button type="button" class="page-btn prev" onclick="changePage('prev')" disabled>이전</button>
+                        <div class="page-numbers" id="pageNumbers">
+                            <!-- 페이지 번호는 JavaScript로 동적 생성됩니다 -->
+                        </div>
+                        <button type="button" class="page-btn next" onclick="changePage('next')">다음</button>
+                    </div>
+                </div>
+                <div class="center-map" id="centerMap">
+                    <!-- 지도가 표시될 영역 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="../images/logo_tgs.png" alt="TGService">
+            </div>
+            <div class="footer-links">
+                <a href="#">이용약관</a>
+                <span>|</span>
+                <a href="#">개인정보처리방침</a>
+                <span>|</span>
+                <a href="#">스마트단말 고객지원센터</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            Copyright©2025 TGS corp. All Rights Reserved.
+        </div>
+        <div class="footer-bottom-logo">
+            <img src="../images/logo_tgs.png" alt="TGService">
+        </div>
+    </div>
+</footer>
+
+<!-- 카카오맵 API 스크립트 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=63217402e04247f7c94ec2aef83a46e9"></script>
+<script>
+    // 페이지네이션 관련 변수
+    let currentPage = 1;
+    let totalPages = 0;
+    let allCenters = [];
+    let itemsPerPage = 5;
+    let filteredCenters = []; // 검색 결과를 저장할 배열
+
+    // 검색 기능
+    function searchCenters() {
+        const searchInput = document.getElementById('centerSearch');
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        const centerTable = document.querySelector('.center-table');
+        const pagination = document.querySelector('.pagination');
+        
+        // 검색어가 비어있으면 모든 센터 표시
+        if (!searchTerm) {
+            filteredCenters = [...allCenters];
+            // 검색어가 없을 때는 '검색결과 없음' 메시지 제거
+            const noResultsMessage = document.querySelector('.no-results-message');
+            if (noResultsMessage) {
+                noResultsMessage.remove();
+            }
+            // 테이블과 페이지네이션 표시
+            if (centerTable) centerTable.style.display = 'table';
+            if (pagination) pagination.style.display = 'flex';
+        } else {
+            // 검색어로 센터 필터링
+            filteredCenters = allCenters.filter(center => {
+                const centerName = center.center.toLowerCase();
+                const centerAddress = center.element.querySelector('.center-address').textContent.toLowerCase();
+                return centerName.includes(searchTerm) || centerAddress.includes(searchTerm);
+            });
+
+            // 검색 결과가 없을 경우 메시지 표시
+            const noResultsMessage = document.querySelector('.no-results-message');
+            if (filteredCenters.length === 0) {
+                if (!noResultsMessage) {
+                    const message = document.createElement('div');
+                    message.className = 'no-results-message';
+                    message.innerHTML = `
+                        <div class="no-results-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <p>검색 결과가 없습니다.</p>
+                        <p class="no-results-sub">다른 검색어로 다시 시도해주세요.</p>
+                    `;
+                    document.querySelector('.center-list').appendChild(message);
+                }
+                // 테이블과 페이지네이션 숨기기
+                if (centerTable) centerTable.style.display = 'none';
+                if (pagination) pagination.style.display = 'none';
+            } else {
+                if (noResultsMessage) {
+                    noResultsMessage.remove();
+                }
+                // 테이블과 페이지네이션 표시
+                if (centerTable) centerTable.style.display = 'table';
+                if (pagination) pagination.style.display = 'flex';
+            }
+        }
+
+        // 페이지네이션 초기화 및 첫 페이지 표시
+        currentPage = 1;
+        totalPages = Math.ceil(filteredCenters.length / itemsPerPage);
+        showPage(1);
+    }
+
+    // 센터 데이터 초기화
+    function initializeCenters() {
+        const centerRows = document.querySelectorAll('.center-table tbody tr');
+        const searchInput = document.getElementById('centerSearch');
+
+        // 모바일인지 여부에 따라 itemsPerPage 설정
+        if (window.innerWidth <= 767) {
+            itemsPerPage = 3;
+        } else {
+            itemsPerPage = 5;
+        }
+
+        allCenters = Array.from(centerRows).map(row => ({
+            element: row,
+            center: row.dataset.center
+        }));
+        
+        // 초기에는 모든 센터를 filteredCenters에 복사
+        filteredCenters = [...allCenters];
+        totalPages = Math.ceil(filteredCenters.length / itemsPerPage);
+        showPage(1);
+
+        // 검색 입력창 엔터 키 이벤트 처리
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault(); // 폼 제출 방지
+                searchCenters();
+            }
+        });
+
+        // 검색 버튼 클릭 이벤트
+        const searchBtn = document.querySelector('.search-btn');
+        if (searchBtn) {
+            searchBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                searchCenters();
+            });
+        }
+    }
+
+    // 페이지네이션 UI 업데이트
+    function updatePagination() {
+        const pageNumbers = document.getElementById('pageNumbers');
+        if (!pageNumbers) return;
+        
+        pageNumbers.innerHTML = '';
+        
+        // 검색 결과가 없을 경우 페이지네이션 숨기기
+        if (filteredCenters.length === 0) {
+            pageNumbers.style.display = 'none';
+            return;
+        }
+        
+        pageNumbers.style.display = 'flex';
+        
+        // 페이지 번호 생성
+        for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.type = 'button';
+            if (i === currentPage) {
+                pageBtn.classList.add('active');
+            }
+            pageBtn.textContent = i;
+            pageBtn.onclick = () => showPage(i);
+            pageNumbers.appendChild(pageBtn);
+        }
+
+        // 이전/다음 버튼 상태 업데이트
+        const prevBtn = document.querySelector('.page-btn.prev');
+        const nextBtn = document.querySelector('.page-btn.next');
+        
+        if (prevBtn && nextBtn) {
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage === totalPages;
+        }
+    }
+
+    // 페이지 변경 함수 추가
+    function changePage(direction) {
+        if (direction === 'prev' && currentPage > 1) {
+            showPage(currentPage - 1);
+        } else if (direction === 'next' && currentPage < totalPages) {
+            showPage(currentPage + 1);
+        }
+    }
+
+    // 특정 페이지 표시
+    function showPage(page) {
+        if (page < 1 || page > totalPages) return;
+        
+        currentPage = page;
+        
+        // 모든 센터 숨기기
+        allCenters.forEach(center => {
+            center.element.style.display = 'none';
+        });
+
+        // 현재 페이지의 필터링된 센터만 표시
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = Math.min(startIndex + itemsPerPage, filteredCenters.length);
+        
+        for (let i = startIndex; i < endIndex; i++) {
+            if (filteredCenters[i]) {
+                filteredCenters[i].element.style.display = 'table-row';
+            }
+        }
+
+        // 페이지네이션 UI 업데이트
+        updatePagination();
+    }
+
+    let map = null;
+    let markers = [];
+    const centerLocations = {
+        '화정역점': { lat: 37.6345, lng: 126.8327 },
+        '일산점': { lat: 37.6584, lng: 126.7698 },
+        '강남점': { lat: 37.4981, lng: 127.0276 },
+        '송파점': { lat: 37.5139, lng: 127.1006 },
+        '부천점': { lat: 37.5035, lng: 126.7660 }
+    };
+
+    function initMap() {
+        const container = document.getElementById('centerMap');
+        if (!container) return;
+
+        const options = {
+            center: new kakao.maps.LatLng(37.5665, 126.9780),
+            level: 8
+        };
+        
+        try {
+            map = new kakao.maps.Map(container, options);
+            
+            // 지도 컨테이너 크기 변경 시 지도 크기 재조정
+            window.addEventListener('resize', function() {
+                if (map) {
+                    map.relayout();
+                }
+            });
+
+            // 모바일에서 지도 초기화 후 크기 재조정
+            setTimeout(() => {
+                if (map) {
+                    map.relayout();
+                }
+            }, 100);
+        } catch (error) {
+            console.error('지도 초기화 중 오류 발생:', error);
+        }
+    }
+
+    function showMap(centerName) {
+        const mapContainer = document.querySelector('.center-map');
+        if (!mapContainer) return;
+
+        // 지도 컨테이너 표시
+        mapContainer.style.display = 'block';
+        mapContainer.style.height = '500px';
+        
+        // 지도가 없으면 초기화
+        if (!map) {
+            initMap();
+        }
+
+        // 지도 초기화 대기
+        setTimeout(() => {
+            if (!map) {
+                console.error('지도 초기화 실패');
+                return;
+            }
+
+            // 기존 마커 제거
+            markers.forEach(marker => marker.setMap(null));
+            markers = [];
+
+            const location = centerLocations[centerName];
+            if (location) {
+                const position = new kakao.maps.LatLng(location.lat, location.lng);
+                
+                // 지도 중심 이동
+                map.setCenter(position);
+                map.setLevel(3);
+                
+                // 마커 생성
+                const marker = new kakao.maps.Marker({
+                    position: position,
+                    map: map
+                });
+                
+                markers.push(marker);
+                
+                // 인포윈도우 생성
+                const infowindow = new kakao.maps.InfoWindow({
+                    content: `<div style="padding:5px;">${centerName}</div>`
+                });
+                
+                infowindow.open(map, marker);
+            }
+        }, 100);
+    }
+
+    // 페이지 로드 시 초기화
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeCenters();
+        initMap();
+    });
+</script>
+
+<script>
+function showComingSoon(menuName) {
+    alert(`${menuName} 메뉴는 준비중인 화면입니다.\n곧 업데이트 예정입니다.`);
+}
+</script>
+
+</body>
+</html> 
