@@ -559,50 +559,6 @@ input,button,teatarea,select{
 
 
 }
-
-.back-to-main {
-    text-align: center;
-    margin: 20px 0;
-    padding: 0 20px;
-}
-
-.back-to-main-btn {
-    background: transparent;
-    color: #cecece;
-    border: none;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    min-width: 200px;
-    justify-content: center;
-}
-
-.back-to-main-btn:hover {
-    color: #505050;
-}
-
-
-.back-to-main-btn i {
-    font-size: 16px;
-}
-
-@media (max-width: 768px) {
-    .back-to-main {
-        margin: 15px 0;
-        padding: 0 15px;
-    }
-    
-    .back-to-main-btn {
-        padding: 10px 20px;
-        font-size: 13px;
-        min-width: 180px;
-    }
-}
 @media (max-width: 700px) {
     .auth-left{
         min-height: 200px;

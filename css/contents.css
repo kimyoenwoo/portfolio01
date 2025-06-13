@@ -1,7 +1,5 @@
 /* contents.css - 컨텐츠 세부 요소 스타일 */
-.contents{
-    min-height: 860px;
-}
+
 /* 경로 네비게이션 스타일 */
 .path-navigation {
     margin-bottom: 30px;
@@ -152,6 +150,7 @@ input[type="text"]:focus, input[type="search"]:focus {
 .search-input {
     flex: 1;
     height: 50px;
+    font-size: 1.1rem !important;
     transition: all 0.3s !important;
     outline: none;
     border-radius: 40px !important;

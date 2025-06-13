@@ -450,11 +450,6 @@ input,button,teatarea,select{
     .footer-bottom-logo img{
         width: 120px;
     }
-
-    .login-message .login-btn{
-        font-size: 0.8rem;
-        padding: 10px 20px;
-    }
 }
 
 /* 메인 컨텐츠 영역 */

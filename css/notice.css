@@ -83,10 +83,6 @@
     background-color: #0056b3;
 }
 
-#noticeTitle{
-    margin-bottom: 15px;
-    margin-top: 0;  
-}
 /* 모바일 대응 */
 @media (max-width: 767px) {
     .modal-content {
